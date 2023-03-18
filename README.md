@@ -4,7 +4,7 @@ A C# card game with complex and random functionalities.
 
 ## Introduction
 
-Superior Card Game is a console-based card game application written in C#. The game includes various functionalities, such as drawing cards for the player and the opponent, shuffling the deck, counting the remaining cards in the deck, and simulating a player's turn. Additionally, it provides a fun feature that fetches random jokes from an external API.
+Superior Card Game is a console-based card game application written in C#. The game includes various functionalities, such as drawing cards for the player and the opponent, shuffling the deck, counting the remaining cards in the deck, simulating a player's turn, fetching random jokes from an external API, and displaying the Astronomy Picture of the Day from NASA's API. turn. Additionally, it provides a fun feature that fetches random jokes from an external API.
 
 ## Getting Started
 
@@ -39,9 +39,12 @@ The game will display a menu with the following options:
 5. Simulate player turn
 6. Show player and opponent cards
 7. Get a random joke
-8. Exit
+8. Get a random fact
+9. Get Astronomy Picture of the Day
+10. Exit
 
-Select an option by entering the corresponding number and pressing `Enter`. The game will execute the selected action and display the result. To quit the game, select option 8.
+
+Select an option by entering the corresponding number and pressing Enter. The game will execute the selected action and display the result. To quit the game, select option 10.
 
 ## Contributing
 
