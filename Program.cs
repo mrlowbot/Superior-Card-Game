@@ -9,15 +9,13 @@ namespace CardGame
             Deck deck = new Deck();
             CardOperations operations = new CardOperations();
             API api = new API();
+            FactAPI factApi = new FactAPI();
             List<Card> playerCards = new List<Card>();
             List<Card> opponentCards = new List<Card>();
+            NasaAPI nasaApi = new NasaAPI();
 
             deck.InitializeDeck();
             await operations.ShuffleAsync(deck);
-
-            deck.InitializeDeck();
-            await operations.ShuffleAsync(deck);
-
             while (true)
             {
                 Console.WriteLine("Select an option:");
@@ -27,8 +25,10 @@ namespace CardGame
                 Console.WriteLine("4. Count cards in the deck");
                 Console.WriteLine("5. Simulate player turn");
                 Console.WriteLine("6. Show player and opponent cards");
-                Console.WriteLine("7. Get a random joke (jokeapi.dev)");
-                Console.WriteLine("8. Exit\n");
+                Console.WriteLine("7. Get a random joke");
+                Console.WriteLine("8. Get a random fact");
+                Console.WriteLine("9. Get Astronomy Picture of the Day");
+                Console.WriteLine("10. Exit\n");
 
                 int choice;
                 if (int.TryParse(Console.ReadLine(), out choice))
@@ -107,8 +107,21 @@ namespace CardGame
 
                         case 8:
                             Console.Clear();
+                            string fact = await factApi.GetRandomFactAsync();
+                            Console.WriteLine("Random fact: " + fact + "\n");
+                            break;
+
+                        case 9:
+                            Console.Clear();
+                            string apod = await nasaApi.GetAstronomyPictureOfTheDayAsync();
+                            Console.WriteLine("Astronomy Picture of the Day:\n" + apod + "\n");
+                            break;
+
+                        case 10:
+                            Console.Clear();
                             Console.WriteLine("Exiting...\n");
                             return;
+
                         default:
                             Console.Clear();
                             Console.WriteLine("Invalid option. Please try again.\n");
